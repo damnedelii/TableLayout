@@ -1,9 +1,7 @@
 # TableLayout
 Simple app to add rows dynamically. 
 
-
 activity_main.xml
-
 <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -64,7 +62,6 @@ activity_main.xml
 
 MainActivity.java
 package com.example.elii.tablelayout;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -78,13 +75,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 
-
-
-
 public class MainActivity extends Activity implements OnClickListener {
-    /**
-     * Called when the activity is first called.
-     */
+    /*** Called when the activity is first called.  */
 
     Button btn;
     Button remove_btn;
@@ -118,21 +110,17 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
             case R.id.Button02:
                int childCount = tl.getChildCount();
-             //tl=(TableLayout)findViewById(R.id.TableLayout01);
+                //tl=(TableLayout)findViewById(R.id.TableLayout01);
                 for (int i=0; i<childCount; i++) {
                    CheckBox checkBox = ((CheckBox)((TableRow)tl.getChildAt(i)).getChildAt(2));
-                    boolean isChecked = checkBox.isChecked();
-                   // TableRow currentRow = (TableRow)tl.getChildAt(i);
-                  // CheckBox checkBox = (CheckBox)currentRow.getChildAt(2);
+                   boolean isChecked = checkBox.isChecked();
+                // TableRow currentRow = (TableRow)tl.getChildAt(i);
+                // CheckBox checkBox = (CheckBox)currentRow.getChildAt(2);
                     if(isChecked){
                         tl.removeView(checkBox);
                     }
-
                 }
-
                 break;
         }
-
-
     }
 }
